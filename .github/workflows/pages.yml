@@ -1,0 +1,40 @@
+name: Publish personal homepage
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Read website files
+        uses: actions/checkout@v6
+      - name: Assemble website
+        run: |
+          python3 -m zipfile -e website.zip site
+          mkdir -p site/assets
+          cp sun-wei-portfolio-cn.pdf site/assets/sun-wei-portfolio-cn.pdf
+          test -f site/index.html
+          test -f site/locales/zh.json
+          test -f site/assets/savour-product.glb
+          test -f site/assets/xband-product.glb
+          test -f site/assets/teahouse.glb
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload complete website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v4
