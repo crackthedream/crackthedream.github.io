@@ -1,0 +1,137 @@
+% Compile with XeLaTeX or Tectonic. In Overleaf, choose XeLaTeX.
+% Self-contained academic CV: no photograph, external images, or custom class.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=18mm,top=16mm,bottom=17mm,footskip=8mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{texgyrepagella}[
+  Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,
+  ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\setsansfont{texgyreheros}[
+  Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,
+  ItalicFont=*-italic,BoldItalicFont=*-bolditalic,Scale=MatchLowercase]
+\usepackage{xcolor}
+\usepackage{tabularx,array}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\definecolor{accent}{HTML}{183D50}
+\definecolor{muted}{HTML}{52616A}
+\definecolor{rulecolor}{HTML}{B9C7CF}
+\hypersetup{
+  colorlinks=true,urlcolor=accent,linkcolor=accent,
+  pdftitle={SUN Wei - Academic CV},pdfauthor={SUN Wei},
+  pdfsubject={Academic CV for doctoral applications},
+  pdfkeywords={Human-AI interaction, HCI, multimodal interfaces, industrial design}
+}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\emergencystretch}{1.5em}
+\renewcommand{\baselinestretch}{1.035}
+\raggedbottom
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{{\sffamily\fontsize{8}{10}\selectfont\color{muted}SUN Wei}}
+\fancyfoot[R]{{\sffamily\fontsize{8}{10}\selectfont\color{muted}\thepage}}
+\setlist[itemize]{
+  leftmargin=1.15em,label=\textbullet,labelsep=0.5em,
+  topsep=4pt,itemsep=3pt,parsep=0pt,partopsep=0pt
+}
+
+% Reusable formatting commands. Edit the document body below to update content.
+\newcommand{\cvsection}[1]{%
+  \par\addvspace{11pt}\Needspace{4\baselineskip}%
+  {\sffamily\bfseries\fontsize{10.3}{12.4}\selectfont\color{accent}%
+    \addfontfeatures{LetterSpace=6}\MakeUppercase{#1}\par}%
+  \vspace{3pt}{\color{rulecolor}\hrule height 0.45pt}\vspace{6pt}}
+\newcommand{\cventry}[3]{%
+  \Needspace{5\baselineskip}%
+  \textbf{#1}\hfill{\small\color{muted}#2}\par\vspace{2pt}%
+  {\small\color{muted}#3\par}}
+\newcommand{\cvskill}[2]{%
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\bfseries\arraybackslash}p{43mm}@{\hspace{4mm}}>{\raggedright\arraybackslash}X@{}}#1&#2\end{tabularx}\par\vspace{5pt}}
+
+\begin{document}
+
+% CONTACT
+{\sffamily\bfseries\fontsize{25}{28}\selectfont\color{accent}SUN Wei\par}
+\vspace{3pt}
+{\fontsize{11}{14}\selectfont Industrial Design undergraduate \textperiodcentered\ Zhejiang University\par}
+\vspace{7pt}
+{\small
+\begin{tabularx}{\linewidth}{@{}X>{\raggedleft\arraybackslash}p{62mm}@{}}
+  \textbf{Email:} \href{mailto:1162100953@qq.com}{1162100953@qq.com}
+    &\textbf{Phone:} \href{tel:+8618806820562}{+86 188 0682 0562}\\[3pt]
+  \textbf{Personal website:} \href{https://crackthedream.github.io/}{crackthedream.github.io}
+    &\textbf{WeChat:} Takodachi866
+\end{tabularx}}
+
+\cvsection{Education}
+\cventry{Zhejiang University}{Sep 2023 -- Jun 2027}{Industrial Design \textperiodcentered\ Hangzhou, China \textperiodcentered\ Expected graduation: June 2027}
+College of Computer Science \& Technology\par
+\vspace{3pt}
+\begin{tabularx}{\linewidth}{@{}X>{\raggedleft\arraybackslash}p{37mm}@{}}
+  \textbf{Overall GPA:} 3.85/4.3 (85.97/100)&\textbf{Ranking:} 16/42\\[2pt]
+  \textbf{Third-year GPA:} 4.09/4.3 (89.59/100)&
+\end{tabularx}
+
+\cvsection{Research Interests}
+Human-AI interaction, multimodal interfaces, and user evaluation of interactive systems.
+
+\cvsection{Research Experience}
+\textbf{Speed, Not Density: Oculomotor Responses to Crowd Motion in Passive VR Viewing}\par
+\vspace{3pt}
+{\small\color{muted}Undergraduate research \textperiodcentered\ First author \textperiodcentered\ Manuscript under review at ACM CHI 2027\par}
+\begin{itemize}
+  \item Designed a passive-viewing VR study to examine how crowd motion relates to eye movements and discomfort; built 21 Unity stimulus configurations across three crowd behaviors.
+  \item Conducted sessions with 42 participants, collecting eye tracking, peripheral physiological signals, and symptom ratings; retained 35 participants and 245 trials after quality screening.
+  \item Developed the workflow for multimodal data alignment, cleaning, and eye-movement feature extraction; performed paired nonparametric comparisons and multiple-comparison correction, and wrote the manuscript.
+  \item Found higher saccade rates at faster crowd speeds in the primary paired comparison (\textit{n} = 11): 11.55 versus 20.42/min at 3.0 versus 4.5 m/s (BH-adjusted \textit{p} = .0366).
+\end{itemize}
+
+\cvsection{Selected Projects}
+\cventry{SAVOUR}{May -- Jun 2026}{AR food-information interface \textperiodcentered\ Team project}
+\begin{itemize}
+  \item Built the recognition-to-overlay software pipeline for an AR food-information prototype, connecting detected food regions to nutrition feedback and taking responsibility for software integration and debugging.
+  \item Integrated GLEE region detection with Qwen visual recognition; revised category correction, repeated detection, short-term tracking, and label expiration to address ambiguous targets and drifting or stale overlays.
+\end{itemize}
+\vspace{4pt}
+\cventry{Momentum}{Apr 2026}{AI study support and self-management \textperiodcentered\ Team project}
+\begin{itemize}
+  \item Built the React/Vite mobile web frontend and connected FastAPI services for task planning, priorities, deadlines, and focused study sessions; a teammate provided the original visual design.
+  \item Integrated LLM tool calls with stored task data and connected speech recognition and synthesis for contextual dialogue during focus sessions; used mode-specific prompts to distinguish study support from task-editing requests.
+\end{itemize}
+
+\newpage
+\cventry{EMS Feedback for Multi Drone Search Simulation}{Jan 2026}{Simulation and physical feedback \textperiodcentered\ Team project}
+\begin{itemize}
+  \item Implemented communication that turns target events in a Unity drone-search simulation into forearm electrical muscle stimulation (EMS), encoding target direction and distance as physical feedback.
+  \item Connected Unity events to a Python device service through TCP/JSON and sent commands over Bluetooth Low Energy; contributed to feedback mapping and demonstrated the integrated pipeline in the course project.
+\end{itemize}
+
+\cvsection{Additional Design Experience}
+\cventry{FOCUS DRIVE}{Dec 2025}{Driver-service interface \textperiodcentered\ Team project}
+\vspace{4pt}
+Designed feature flows and six groups of high-fidelity screens for a driver-service app, covering order handling, navigation, and safety-related information.\par
+\vspace{9pt}
+\cventry{X-Band}{Jul 2025}{Wearable interaction concept \textperiodcentered\ Individual project}
+\vspace{4pt}
+Designed a wearable concept for people with limb loss to log phantom-limb discomfort and access professionally configured stimulation; developed one-handed controls, user confirmation, and an explicit stop mechanism.
+
+\cvsection{Honors}
+\textbf{Academic Excellence Exemplar}\hfill{\small\color{muted}2026}\par
+
+\cvsection{Skills}
+\cvskill{Programming and AI}{Python for data processing and statistical analysis; React/Vite frontend development; LLM and computer vision application integration.}
+\cvskill{Interactive systems}{Unity development, software-hardware integration, device communication, and multimodal data acquisition.}
+\cvskill{Research and design}{User studies and quantitative evaluation; Figma interaction prototyping; Blender 3D modeling and visualization.}
+
+\cvsection{Languages}
+\textbf{Mandarin Chinese:} Native.\quad \textbf{English:} CET-6, 609/710.\par
+\vspace{3pt}
+\textbf{TOEFL iBT:} 5.0/6 (100/120; CEFR C1), 30 September 2026.\par
+Reading 5.0, Listening 5.0, Writing 5.5, Speaking 4.5 (each out of 6).
+
+\end{document}
