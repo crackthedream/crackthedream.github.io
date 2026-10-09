@@ -26,6 +26,7 @@ jobs:
           cp sun-wei-portfolio-cn.pdf site/assets/sun-wei-portfolio-cn.pdf
           test -f site/index.html
           test -f site/locales/zh.json
+          test -f site/assets/sun-wei-academic-cv.pdf
           test -f site/assets/savour-product.glb
           test -f site/assets/xband-product.glb
           test -f site/assets/teahouse.glb
